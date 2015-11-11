@@ -2,18 +2,15 @@ FROM  centos:centos6
 
 MAINTAINER sjavierlopez@gmail.com
 
-# Enable EPEL for Node.js
-RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+# Enable Extra Packages for Enterprise Linux (EPEL) for CentOS
+RUN     yum install -y epel-release
+# Install Node.js and npm
+RUN     yum install -y nodejs npm
 
-#install nodejs
-RUN yum install -y npm
-
-#copy app to src
+# Bundle app source
 COPY . /src
-
-# Install app and dependencies into /src
+# Install app dependencies
 RUN cd /src; npm install
 
-EXPOSE 8080
-
-CMD cd /src && node ./app.js
+EXPOSE  8080
+CMD ["node", "/src/app.js"]

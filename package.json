@@ -1,12 +1,12 @@
 {
-  "name": "hello app",
+  "name": "hello-app",
   "private": true,
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "This is an app",
   "main": "app.js",
   "author": "Javier Lopez <sjavierlopez@gmail.com>",
   "license": "MIT",
-  "dependencias": {
+  "dependencies": {
     "express":"3.2.4",
     "jade":"1.11.0",
     "mocha":"1.20.1",
